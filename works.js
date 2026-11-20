@@ -13,6 +13,17 @@ window.PROFILE = {
 
 window.WORKS = [
   {
+    title: "IXIBase",
+    summary: "페르소나 AI가 Threads 계정을 대신 운영하는 자동화 스위트. 글감부터 작성, 발행, 댓글 응대, 성과 분석까지 이어지며, AI 코딩 에이전트와 함께 기획부터 배포까지 만들었습니다.",
+    tags: ["웹 서비스", "AI", "자동화"],
+    date: "2026-11",
+    status: "공개 준비 중",
+    page: "works/ixibase/",
+    thumb: "works/ixibase/thumb.png",
+    service: "https://www.ixibase.xyz",
+    repo: "",
+  },
+  {
     title: "DayDeck",                       // 작업물 이름 (필수)
     summary: "Windows 11용 할 일·달력·메모·알림 프로그램. 트레이에 상주하며 메모리를 적게 쓰고, \"내일 오후 3시 치과\"처럼 한 줄로 일정을 넣습니다.", // 한두 문장 소개 (필수)
     tags: ["데스크톱 앱", "C#", "WPF"],      // 분류 태그 (위쪽 필터 단추로 쓰임)
