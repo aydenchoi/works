@@ -13,6 +13,17 @@ window.PROFILE = {
 
 window.WORKS = [
   {
+    title: "0Brix",
+    summary: "유튜브 채널 성장 분석 서비스. 채널의 구독자·조회수 증가와 급상승 동영상을 매일 수집해 보여 주며, AI 코딩 에이전트와 함께 1인이 기획부터 배포까지 만들었습니다.",
+    tags: ["웹 서비스", "AI", "데이터 분석"],
+    date: "2026-11",
+    status: "운영 중",
+    page: "works/0brix/",
+    thumb: "works/0brix/thumb.jpg",
+    service: "https://www.0brix.xyz",
+    repo: "",
+  },
+  {
     title: "IXIBase",
     summary: "페르소나 AI가 Threads 계정을 대신 운영하는 자동화 스위트. 글감부터 작성, 발행, 댓글 응대, 성과 분석까지 이어지며, AI 코딩 에이전트와 함께 기획부터 배포까지 만들었습니다.",
     tags: ["웹 서비스", "AI", "자동화"],
