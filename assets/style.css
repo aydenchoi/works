@@ -127,6 +127,14 @@ h1 {
 }
 .card:hover { transform: translateY(-3px); border-color: var(--accent); }
 
+/* 카드 전체 클릭: 제목 링크의 클릭 영역을 카드 전체로 늘리고, 아래 단추들은 그 위에 둔다 */
+.card.has-page { position: relative; cursor: pointer; }
+.card.has-page .title-link::after { content: ""; position: absolute; inset: 0; z-index: 0; }
+.card.has-page .title-link:focus-visible { outline: none; }
+.card.has-page:has(.title-link:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.card.has-page:hover .title-link { color: var(--accent); }
+.card .actions { position: relative; z-index: 1; }
+
 .media {
   aspect-ratio: 16 / 10;
   background: var(--soft);

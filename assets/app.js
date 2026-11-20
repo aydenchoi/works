@@ -48,8 +48,7 @@
   }
 
   function card(w) {
-    var href = w.page || w.service || w.repo || "";
-    var thumb = w.thumb
+    var href = w.page || w.service || w.repo || "";    var thumb = w.thumb
       ? el("img", { src: w.thumb, alt: "", loading: "lazy" })
       : el("span", { class: "mono", "aria-hidden": "true", text: (w.title || "?").trim().charAt(0) });
     var media = el("div", { class: "media" }, [thumb]);
@@ -71,7 +70,8 @@
       w.repo ? linkEl("저장소 ↗", w.repo, "act") : null,
     ]);
 
-    return el("li", { class: "card" }, [media, el("div", { class: "body" }, [meta, title, summary, tagList, actions])]);
+    // 포트폴리오 페이지가 있으면 카드 전체를 '자세히 보기' 링크로 만든다 (제목 링크를 카드 크기로 늘림)
+    return el("li", { class: w.page ? "card has-page" : "card" }, [media, el("div", { class: "body" }, [meta, title, summary, tagList, actions])]);
   }
 
   function render() {
