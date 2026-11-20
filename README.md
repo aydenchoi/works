@@ -20,6 +20,7 @@ works/
 
 1. `works/` 아래에 폴더를 만들고(예: `works/daydeck/`) 포트폴리오 HTML을 `index.html`로 넣습니다.
    그 페이지가 쓰는 이미지·CSS도 같은 폴더에 넣고 상대 경로(`./img/a.png`)로 연결합니다.
+   페이지 위쪽에 목록으로 돌아가는 링크 `<a href="../../index.html">← 작업물 목록</a>`을 넣어 두면 좋습니다.
 2. `works.js`의 `WORKS` 배열 맨 위에 항목을 추가합니다.
 
 ```js

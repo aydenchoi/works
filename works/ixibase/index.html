@@ -76,6 +76,9 @@ svg { display: block; }
 /* 상단 바 */
 .topbar { border-bottom: 1px solid var(--line); }
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.topbar-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.back { font-size: 0.875rem; color: var(--muted); text-decoration: none; padding-right: 14px; border-right: 1px solid var(--line); white-space: nowrap; }
+.back:hover { color: var(--accent); }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
 .brand svg { width: 28px; height: 28px; }
 .toc { display: flex; gap: 18px; font-size: 0.875rem; }
@@ -318,6 +321,8 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
 
 <header class="topbar">
   <div class="wrap">
+    <div class="topbar-left">
+    <a class="back" href="../../index.html">← 작업물 목록</a>
     <div class="brand">
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <defs>
@@ -331,6 +336,7 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
         <path d="M43.500 30.500l4.200 4.200-4.200 4.200" fill="none" stroke="#34D399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       IXIBase
+    </div>
     </div>
     <nav class="toc" aria-label="목차">
       <a href="#loop">자동 운영</a>
