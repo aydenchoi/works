@@ -89,7 +89,7 @@ h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
 .qa-shot img { width: 100%; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 48px -28px rgba(40, 20, 90, 0.45); }
 
 /* 설계 목표 */
-.goals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.goals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
 .goal { padding: 18px 20px 4px; border-left: 1px solid var(--line); display: grid; gap: 4px; align-content: start; }
 .goal:first-child { border-left: 0; padding-left: 0; }
 .goal .n { font-size: clamp(2rem, 4.4vw, 2.75rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; font-variant-numeric: tabular-nums; }
@@ -145,8 +145,6 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
 
 @media (max-width: 920px) {
   .hero .wrap, .qa, .data { grid-template-columns: minmax(0, 1fr); }
-  .goals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .goal:nth-child(3) { border-left: 0; padding-left: 0; }
   .features, .build { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .screen { grid-template-columns: minmax(0, 1fr); }
   .hero-copy { grid-template-columns: minmax(0, 1fr); align-items: start; }
@@ -234,12 +232,11 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
   <!-- 설계 목표 -->
   <section class="wrap section">
     <div class="head">
-      <p class="eyebrow">가볍게, 확실하게</p>
-      <h2>항상 켜 두는 프로그램이라 가벼워야 합니다</h2>
-      <p class="lead">트레이, 알림 예약, 자동 저장만 늘 메모리에 두고, 창을 닫으면 화면 객체를 해제합니다. 알림은 주기적으로 확인하지 않고 다음 알림 시각 하나에만 타이머를 겁니다.</p>
+      <p class="eyebrow">빠르게, 확실하게</p>
+      <h2>항상 켜 두는 프로그램이라 빠르고 확실해야 합니다</h2>
+      <p class="lead">트레이, 알림 예약, 자동 저장만 항상 돌아가고, 알림은 주기적으로 확인하지 않고 다음 알림 시각 하나에만 타이머를 겁니다. 편집한 내용은 몇 초 안에 저장합니다.</p>
     </div>
     <div class="goals">
-      <div class="goal"><span class="n">30<small>MB 이하</small></span><p>트레이에 있을 때 메모리</p></div>
       <div class="goal"><span class="n">0.5<small>초</small></span><p>실행 후 트레이 아이콘이 뜨기까지</p></div>
       <div class="goal"><span class="n">+1<small>초 이내</small></span><p>예정 시각 대비 알림 지연</p></div>
       <div class="goal"><span class="n">수 초</span><p>갑자기 꺼져도 잃는 편집 내용 (편집 후 바로 저장)</p></div>
