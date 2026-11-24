@@ -39,10 +39,11 @@ window.WORKS = [
     summary: "Windows 11용 할 일·달력·메모·알림 프로그램. 트레이에 상주하며 메모리를 적게 쓰고, \"내일 오후 3시 치과\"처럼 한 줄로 일정을 넣습니다.", // 한두 문장 소개 (필수)
     tags: ["데스크톱 앱", "C#", "WPF"],      // 분류 태그 (위쪽 필터 단추로 쓰임)
     date: "2026-11",                         // 연-월
-    status: "개발 중",                       // 예: 운영 중, 개발 중, 완료
-    page: "",                                // 포트폴리오 HTML 경로 (예: "works/daydeck/"). 비워 두면 카드에 '자세히 보기'가 안 나옵니다.
-    thumb: "",                               // 썸네일 이미지 경로 (예: "works/daydeck/thumb.png"). 비워 두면 이름 첫 글자로 표시
-    service: "",                             // 실제 서비스 주소
+    status: "Microsoft Store 출시",          // 예: 운영 중, 개발 중, 완료
+    page: "works/daydeck/",                  // 포트폴리오 HTML 경로. 비워 두면 카드에 '자세히 보기'가 안 나옵니다.
+    thumb: "works/daydeck/thumb.jpg",        // 썸네일 이미지 경로. 비워 두면 이름 첫 글자로 표시
+    service: "https://apps.microsoft.com/detail/9NMBVQZ9X7NG?hl=ko-kr&gl=KR", // 실제 서비스 주소
+    serviceLabel: "MS Store",                // 서비스 단추 글자 (생략하면 '서비스 열기')
     repo: "https://github.com/aydenchoi/DayDeck", // 공개 저장소 주소
   },
 ];

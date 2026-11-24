@@ -48,7 +48,8 @@
   }
 
   function card(w) {
-    var href = w.page || w.service || w.repo || "";    var thumb = w.thumb
+    var href = w.page || w.service || w.repo || "";
+    var thumb = w.thumb
       ? el("img", { src: w.thumb, alt: "", loading: "lazy" })
       : el("span", { class: "mono", "aria-hidden": "true", text: (w.title || "?").trim().charAt(0) });
     var media = el("div", { class: "media" }, [thumb]);
@@ -66,7 +67,7 @@
 
     var actions = el("div", { class: "actions" }, [
       w.page ? linkEl("자세히 보기", w.page, "act primary") : null,
-      w.service ? linkEl("서비스 열기 ↗", w.service, "act") : null,
+      w.service ? linkEl((w.serviceLabel || "서비스 열기") + " ↗", w.service, "act") : null,
       w.repo ? linkEl("저장소 ↗", w.repo, "act") : null,
     ]);
 
