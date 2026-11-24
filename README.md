@@ -33,6 +33,7 @@ works/
   page: "works/daydeck/",          // 포트폴리오 HTML (없으면 "")
   thumb: "works/daydeck/thumb.png", // 썸네일 (없으면 "" → 이름 첫 글자 표시)
   service: "https://...",           // 실제 서비스 주소 (없으면 "")
+  serviceLabel: "MS Store",         // 서비스 단추 글자 (생략하면 "서비스 열기")
   repo: "https://github.com/...",   // 공개 저장소 (없으면 "")
 },
 ```
