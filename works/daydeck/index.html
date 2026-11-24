@@ -57,8 +57,10 @@ h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
 .toc a:hover { color: var(--ink); }
 
 /* 히어로 */
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 56px); align-items: center; padding-block: clamp(44px, 7vw, 88px); }
-.hero-copy { display: grid; gap: 20px; justify-items: start; }
+/* 실제 화면이 1920px 전체 화면이라 옆에 작게 두지 않고 본문 폭 전체로 보여 준다 */
+.hero .wrap { display: grid; gap: clamp(36px, 5vw, 56px); padding-block: clamp(44px, 7vw, 80px); }
+.hero-copy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px clamp(28px, 5vw, 64px); align-items: end; }
+.hero-copy > div { display: grid; gap: 18px; justify-items: start; }
 .app-id { display: flex; align-items: center; gap: 14px; }
 .app-id img { width: 64px; height: 64px; }
 .hero h1 { font-size: clamp(3rem, 8vw, 5.25rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1; }
@@ -83,27 +85,8 @@ h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
 .qa-copy ul { display: grid; gap: 8px; color: var(--muted); }
 .qa-copy li { padding-left: 18px; position: relative; }
 .qa-copy li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 7px; height: 7px; border-radius: 2px; background: var(--violet); }
-.qa-box { background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 20px 44px -28px rgba(40, 20, 90, 0.35); overflow: hidden; }
-.qa-input { display: flex; align-items: center; gap: 12px; padding: 20px 20px 18px; font-size: clamp(1.0625rem, 2.2vw, 1.3125rem); font-weight: 500; min-height: 76px; border-bottom: 1px solid var(--line); }
-.qa-input .plus { color: var(--win-blue); font-size: 1.5rem; line-height: 1; flex: none; }
-.qa-text { display: flex; flex-wrap: wrap; gap: 4px 4px; align-items: center; }
-.qa-text .t { border-radius: 5px; padding: 0 4px; }
-.t.when { background: #e3eefb; color: #1f5fae; }
-.t.repeat { background: #efe8fe; color: #6a3fd6; }
-.t.list { background: #e3f4e6; color: #2d7a3a; }
-.t.pri { background: #fde7e9; color: #b3261e; }
-.t.alarm { background: #f1e7fb; color: #7a3fbf; }
-.t.due { background: #fff1dc; color: #9a5a00; }
-.caret { width: 2px; height: 1.2em; background: var(--ink); margin-left: 2px; }
-@media (prefers-reduced-motion: no-preference) { .caret { animation: blink 1.1s steps(1) infinite; } }
-@keyframes blink { 50% { opacity: 0; } }
-.qa-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 20px; min-height: 72px; }
-.qa-chips span { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.875rem; background: #fff; }
-.qa-foot { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 10px 20px; background: #f7f7f9; font-size: 0.8125rem; color: var(--muted); }
-.qa-examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-.qa-examples button { font: inherit; font-size: 0.875rem; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
-.qa-examples button:hover { border-color: var(--violet); }
-.qa-examples button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.qa-shot { display: grid; gap: 10px; }
+.qa-shot img { width: 100%; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 48px -28px rgba(40, 20, 90, 0.45); }
 
 /* 설계 목표 */
 .goals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
@@ -115,15 +98,14 @@ h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
 .goals-note { margin-top: 18px; }
 
 /* 화면 */
-.screens { display: grid; gap: clamp(32px, 5vw, 56px); }
-.screen { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 44px); align-items: center; }
-.screen:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
-.screen:nth-child(even) .cap { order: 2; }
-.screen .cap { display: grid; gap: 8px; }
-.screen .cap p { color: var(--muted); }
-.screen .pic { border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 18px 40px -26px rgba(40, 20, 90, 0.4); }
-.screen.wide { grid-template-columns: minmax(0, 1fr); }
-.screen.wide .cap { max-width: 40em; }
+.screens { display: grid; gap: clamp(40px, 6vw, 72px); }
+.screen { display: grid; grid-template-columns: minmax(0, 0.32fr) minmax(0, 1fr); gap: 8px clamp(20px, 4vw, 48px); align-items: end; }
+.screen .cap { display: contents; }
+.screen .cap h3 { font-size: 1.25rem; }
+.screen .cap p { color: var(--muted); max-width: 40em; }
+.screen .pic { grid-column: 1 / -1; margin-top: 12px; display: block; border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 24px 48px -28px rgba(40, 20, 90, 0.45); cursor: zoom-in; }
+.screen .pic img { width: 100%; }
+.zoom-hint { margin-top: 18px; }
 
 /* 기능 */
 .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
@@ -166,8 +148,8 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
   .goals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .goal:nth-child(3) { border-left: 0; padding-left: 0; }
   .features, .build { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .screen, .screen:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
-  .screen:nth-child(even) .cap { order: 0; }
+  .screen { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .track { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .track::before { left: 7px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
   .stage { padding: 0 0 0 32px; }
@@ -201,12 +183,15 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
+        <div>
         <div class="app-id">
           <img src="img/icon.png" alt="DayDeck 아이콘">
           <p class="eyebrow">Windows 11 데스크톱 앱</p>
         </div>
         <h1>DayDeck</h1>
         <p class="tagline">할 일, 일정, 메모, 알림을<br>트레이 하나에서.</p>
+        </div>
+        <div>
         <p class="lead">해야 할 일을 잊지 않게 하는 것이 목표입니다. 어디서나 단축키로 2초 안에 적고, 정해진 시각에 확실히 알립니다. 절전이나 재부팅으로 놓친 알림도 다시 보여 줍니다.</p>
         <div class="cta">
           <a class="btn store" href="https://apps.microsoft.com/detail/9NMBVQZ9X7NG?hl=ko-kr&amp;gl=KR" target="_blank" rel="noopener">
@@ -219,9 +204,10 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
           </a>
         </div>
         <p class="facts"><span>Windows 10 · 11</span><span>계정 없이 로컬 저장</span><span>버전 0.9.1</span></p>
+        </div>
       </div>
       <figure class="hero-shot">
-        <img src="img/today.jpg" width="1600" height="1027" alt="DayDeck 오늘 화면: 기한 지난 일, 해야 할 일, 완료한 일이 나뉘어 보이고 위쪽에 오늘 진행률이 표시된다">
+        <img src="img/today.jpg" width="1920" height="1032" alt="DayDeck 오늘 화면: 오늘 일정, 기한 지난 일, 해야 할 일, 완료한 일이 나뉘어 보이고 위쪽에 오늘 진행률이 표시된다">
       </figure>
     </div>
   </section>
@@ -235,17 +221,13 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
         <p class="lead">어떤 프로그램을 쓰다가도 단축키로 빠른 추가 창을 엽니다. 한국어 문장에서 날짜와 시각, 반복, 목록, 중요도, 알림을 찾아 각 칸에 채웁니다.</p>
         <ul>
           <li>한국어 자연어 파서를 직접 만들고 126개 문장으로 테스트</li>
-          <li><kbd>Enter</kbd>로 바로 저장, <kbd>Tab</kbd>으로 상세 입력</li>
+          <li><kbd>Enter</kbd> 저장, <kbd>Ctrl</kbd>+<kbd>Enter</kbd> 저장 후 계속 입력, <kbd>Tab</kbd> 저장 후 자세히</li>
         </ul>
       </div>
-      <div>
-        <div class="qa-box" aria-live="polite">
-          <div class="qa-input"><span class="plus" aria-hidden="true">+</span><span class="qa-text" id="qa-text"></span></div>
-          <div class="qa-chips" id="qa-chips"></div>
-          <div class="qa-foot"><span><kbd>Enter</kbd> 저장</span><span><kbd>Tab</kbd> 상세 입력</span><span><kbd>Esc</kbd> 취소</span></div>
-        </div>
-        <div class="qa-examples" role="group" aria-label="입력 예시 고르기" id="qa-examples"></div>
-      </div>
+      <figure class="qa-shot">
+        <img src="img/quickadd.jpg" width="770" height="206" alt="빠른 추가 창. '내일 오후 3시 치과 #개인 30분 전 알림'을 입력하자 날짜·시각, 목록, 알림 부분이 색으로 구분되고, 아래에 '일정 · 내일 15:00–16:00 · 30분 전 · #개인, 제목: 치과'로 풀어서 보여 준다">
+        <figcaption class="note">실제 화면 · "내일 오후 3시 치과 #개인 30분 전 알림"을 입력했을 때</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -270,27 +252,23 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
     <div class="wrap section">
       <div class="head">
         <p class="eyebrow">주요 화면</p>
-        <h2>오늘 할 일부터 메모까지 한 창에서</h2>
+        <h2>할 일과 일정을 한 창에서</h2>
       </div>
       <div class="screens">
         <figure class="screen">
-          <figcaption class="cap"><h3>주 달력</h3><p>시간 일정과 종일 일정을 한 주 단위로 봅니다. 끌어서 시간을 옮기고, 반복 일정과 한국 공휴일, 음력도 표시합니다.</p></figcaption>
-          <div class="pic"><img src="img/week.jpg" width="1600" height="1027" loading="lazy" alt="주 달력 화면"></div>
+          <figcaption class="cap"><h3>할 일 상세</h3><p>할 일을 누르면 목록은 그대로 두고 오른쪽에 상세가 열립니다. 마감, 우선순위, 목록, 반복, 태그를 정하고, 아래 메모는 서식이 적용된 모양 그대로 고칩니다.</p></figcaption>
+          <a class="pic" href="img/detail.jpg" target="_blank" rel="noopener" title="원본 크기로 보기"><img src="img/detail.jpg" width="1920" height="1032" loading="lazy" alt="오늘 목록에서 '디자인 리뷰 자료 준비'를 열어 마감, 우선순위, 목록, 반복, 태그, 메모를 편집하는 화면"></a>
         </figure>
         <figure class="screen">
-          <figcaption class="cap"><h3>월 달력</h3><p>한 달 일정을 한눈에 보고, 일·주·월·목록 보기로 바꿔 가며 씁니다.</p></figcaption>
-          <div class="pic"><img src="img/month.jpg" width="1600" height="1027" loading="lazy" alt="월 달력 화면"></div>
+          <figcaption class="cap"><h3>달력</h3><p>월·주·일·목록 보기로 일정을 봅니다. 여러 날에 걸친 종일 일정과 반복 일정, 마감이 있는 할 일을 함께 표시하고, 기한이 지난 일은 경고로 알립니다.</p></figcaption>
+          <a class="pic" href="img/month.jpg" target="_blank" rel="noopener" title="원본 크기로 보기"><img src="img/month.jpg" width="1920" height="1032" loading="lazy" alt="2026년 11월 월 달력. 프로젝트 마감 주간, 매일 스탠드업, 가족 여행 같은 일정과 할 일이 날짜별로 표시된다"></a>
         </figure>
         <figure class="screen">
-          <figcaption class="cap"><h3>메모</h3><p>폴더와 탭으로 정리하고, 메모 속 체크 항목을 바로 할 일로 만듭니다. 메모는 마크다운(.md) 파일 그대로 저장되어 VS Code나 Obsidian에서도 열립니다.</p></figcaption>
-          <div class="pic"><img src="img/notes.jpg" width="1600" height="1027" loading="lazy" alt="메모 화면"></div>
-        </figure>
-        <figure class="screen wide">
-          <figcaption class="cap"><h3>창을 열지 않아도</h3><p>바탕화면 위젯에서 오늘 할 일을 체크하고, 트레이 메뉴로 빠르게 추가합니다. 알림에서 바로 완료하거나 미룰 수 있고, 절전에서 깨어나면 놓친 알림을 모아 보여 줍니다.</p></figcaption>
-          <div class="pic"><img src="img/desktop.jpg" width="1600" height="1027" loading="lazy" alt="바탕화면 위젯, 빠른 추가 창, 알림, 트레이 메뉴, 놓친 알림이 함께 보이는 Windows 바탕화면"></div>
+          <figcaption class="cap"><h3>다크 모드</h3><p>테마와 글자 크기를 바꾸면 모든 창이 함께 맞춰집니다.</p></figcaption>
+          <a class="pic" href="img/dark.jpg" target="_blank" rel="noopener" title="원본 크기로 보기"><img src="img/dark.jpg" width="1920" height="1032" loading="lazy" alt="다크 모드로 본 오늘 화면"></a>
         </figure>
       </div>
-      <p class="note" style="margin-top:20px">화면은 설계 단계에 그린 목업이며, 실제 앱과 세부가 다를 수 있습니다.</p>
+      <p class="note zoom-hint">화면을 누르면 원본 크기로 열립니다.</p>
     </div>
   </section>
 
@@ -309,7 +287,7 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
       <li class="feat"><span class="ic" aria-hidden="true">📌</span><h3>스티커 메모</h3><p>메모를 바탕화면에 붙여 두면 위치와 색이 다음 실행 때도 그대로입니다.</p></li>
       <li class="feat"><span class="ic" aria-hidden="true">🕘</span><h3>메모 기록</h3><p>10분마다 예전 내용을 남겨 두어 언제든 이전 버전으로 되돌립니다.</p></li>
       <li class="feat"><span class="ic" aria-hidden="true">📅</span><h3>ICS 가져오기·내보내기</h3><p>다른 달력의 일정을 가져오고, CSV로도 내보냅니다.</p></li>
-      <li class="feat"><span class="ic" aria-hidden="true">🌙</span><h3>다크 모드와 글자 크기</h3><p>테마와 글자 크기를 바꾸면 모든 창이 함께 맞춰집니다.</p></li>
+      <li class="feat"><span class="ic" aria-hidden="true">🖥️</span><h3>위젯과 트레이</h3><p>창을 열지 않아도 바탕화면 위젯과 트레이 메뉴에서 오늘 할 일을 체크하고 바로 추가합니다.</p></li>
     </ul>
   </section>
 
@@ -381,45 +359,5 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
   </div>
 </footer>
 
-<script>
-(function () {
-  // 빠른 추가 예시: 문장 조각과 그 조각이 채우는 칸
-  var EXAMPLES = [
-    { label: "치과 예약",
-      parts: [["내일 오후 3시", "when"], ["치과"], ["#개인", "list"], ["!높음", "pri"], ["30분 전 알림", "alarm"]],
-      chips: ["📅 내일 15:00", "📋 개인", "!!! 높음", "🔔 30분 전"] },
-    { label: "주간회의",
-      parts: [["매주", "repeat"], ["월요일 오전 9시", "when"], ["주간회의"], ["#업무", "list"], ["!높음", "pri"], ["10분전 알림", "alarm"]],
-      chips: ["🔁 매주 반복", "🕘 월 09:00", "📋 업무", "!!! 높음", "🔔 10분 전"] },
-    { label: "주간보고",
-      parts: [["매주", "repeat"], ["금요일까지", "due"], ["주간보고"]],
-      chips: ["🔁 매주 반복", "⏰ 금요일까지"] }
-  ];
-  var text = document.getElementById("qa-text");
-  var chips = document.getElementById("qa-chips");
-  var group = document.getElementById("qa-examples");
-
-  function show(i) {
-    var ex = EXAMPLES[i];
-    text.innerHTML = ""; chips.innerHTML = "";
-    ex.parts.forEach(function (p) {
-      var s = document.createElement("span");
-      s.textContent = p[0];
-      if (p[1]) s.className = "t " + p[1];
-      text.appendChild(s);
-    });
-    var c = document.createElement("span"); c.className = "caret"; c.setAttribute("aria-hidden", "true"); text.appendChild(c);
-    ex.chips.forEach(function (t) { var s = document.createElement("span"); s.textContent = t; chips.appendChild(s); });
-    Array.prototype.forEach.call(group.children, function (b, j) { b.setAttribute("aria-pressed", String(i === j)); });
-  }
-  EXAMPLES.forEach(function (ex, i) {
-    var b = document.createElement("button");
-    b.type = "button"; b.textContent = ex.label;
-    b.addEventListener("click", function () { show(i); });
-    group.appendChild(b);
-  });
-  show(0);
-})();
-</script>
 </body>
 </html>
